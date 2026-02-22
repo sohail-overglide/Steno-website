@@ -713,8 +713,8 @@ img {
 
 .demo-content {
     padding: var(--space-6) var(--space-6);
-    height: 180px;
-    /* Rigid fixed height */
+    height: auto;
+    min-height: 180px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -2686,7 +2686,8 @@ img {
 .testimonials-container {
     display: flex;
     gap: 24px;
-    padding: 0 12px;
+    padding-right: 24px;
+    /* Essential: gap after the last card before duplicate starts */
     /* Animate horizontally */
     animation: scroll-left 40s linear infinite;
 }
@@ -2702,8 +2703,7 @@ img {
     }
 
     100% {
-        /* Move left exactly half the width (since we duplicated the 3 cards) */
-        transform: translateX(calc(-50% - 12px));
+        transform: translateX(-50%);
     }
 }
 
@@ -2967,17 +2967,44 @@ img {
     }
 
     .hero-content {
-        padding: var(--space-4);
+        padding: var(--space-4) 0;
+        max-width: 100vw;
+        overflow: hidden;
     }
 
-    .demo-header {
+    .demo-header-bar {
         flex-direction: column;
-        gap: var(--space-2);
+        gap: var(--space-4);
+        padding: 16px var(--space-3);
     }
 
     .app-icons {
         flex-wrap: wrap;
         justify-content: center;
+        gap: 16px;
+    }
+
+    .demo-card {
+        margin: 0 16px;
+    }
+
+    .features-split-container {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .feature-mode-card {
+        padding: 32px 24px;
+    }
+
+    .voice-revolution-gallery {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        aspect-ratio: auto;
+    }
+
+    .gallery-video-container {
+        aspect-ratio: 16 / 9;
     }
 
     .voice-revolution-stats {
@@ -2993,6 +3020,28 @@ img {
 
     .stat-right {
         justify-content: center;
+    }
+
+    .stat-divider {
+        width: 100%;
+        height: 1px;
+    }
+
+    .pricing-title,
+    .faq-title,
+    .voice-revolution-title,
+    .features-title {
+        font-size: 36px;
+    }
+
+    .voice-revolution-card {
+        padding: 32px 24px;
+    }
+
+    .testimonial-card {
+        width: 300px;
+        min-height: 320px;
+        padding: 24px;
     }
 }
 
