@@ -1,0 +1,38 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" class="avatar-svg">
+  <!-- Dynamic Pill/Rectangle Body -->
+  <defs>
+    <linearGradient id="pillGradient" x1="32" y1="0" x2="32" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#D4F0FF"/>
+      <stop offset="50%" stop-color="#A8E0F8"/>
+      <stop offset="100%" stop-color="#8DD4F4"/>
+    </linearGradient>
+    <linearGradient id="innerGlow" x1="32" y1="8" x2="32" y2="56" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#E8F7FF"/>
+      <stop offset="100%" stop-color="#B8E8FC"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#7BC8E8" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  
+  <g class="avatar-body-group">
+    <!-- Body: Rounded Rectangle for flat top/bottom -->
+    <!-- Center 32,32. Width 60, Height 52 -> x=2 y=6 -->
+    <rect class="avatar-body" x="2" y="6" width="60" height="52" rx="26" fill="url(#pillGradient)" filter="url(#shadow)"/>
+    <!-- Highlight -->
+    <rect class="avatar-highlight" x="6" y="10" width="52" height="44" rx="22" fill="url(#innerGlow)" opacity="0.6"/>
+  </g>
+  
+  <g class="avatar-face">
+    <!-- Eyes -->
+    <!-- Explicitly setting transform-box for CSS transforms -->
+    <rect class="eye left-eye" x="20" y="22" width="8" height="20" rx="4" fill="white" opacity="0.95" style="transform-box: fill-box; transform-origin: center;" />
+    <rect class="eye right-eye" x="36" y="22" width="8" height="20" rx="4" fill="white" opacity="0.95" style="transform-box: fill-box; transform-origin: center;" />
+    
+    <!-- Mouth -->
+    <path class="mouth" d="M 24 40 Q 32 46 40 40" stroke="white" stroke-width="3" stroke-linecap="round" fill="none" opacity="0" />
+  </g>
+  
+  <!-- Subtle top shine -->
+  <ellipse cx="32" cy="16" rx="18" ry="6" fill="white" opacity="0.25"/>
+</svg>
